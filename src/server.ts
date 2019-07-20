@@ -9,6 +9,7 @@ import { applyMiddleware, applyRoutes } from './utils';
 
 import errorHandlers from './middleware/errorHandlers';
 
+// handlers for uncaughtException and uncaughtException events. Can be removed
 process.on('uncaughtException', (e: any) => {
   // tslint:disable-next-line:no-console
   console.log(e);
@@ -19,6 +20,7 @@ process.on('unhandledRejection', (e: any) => {
   console.log(e);
   process.exit(1);
 });
+
 const router = express();
 
 // as we’re adding more and more middleware we don’t have to change this code.
