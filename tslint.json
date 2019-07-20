@@ -5,7 +5,19 @@
   "rules": {
     "interface-name": [false],
     "no-console": [true],
-    "quotemark": [true, "single"]
+    "quotemark": [true, "single"],
+    "trailing-comma": [
+      false,
+      {
+        "multiline": {
+          "objects": "always",
+          "arrays": "always",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        },
+        "esSpecCompliant": true
+      }
+    ]
   },
   "rulesDirectory": []
 }
