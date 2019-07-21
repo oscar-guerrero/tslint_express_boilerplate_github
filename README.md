@@ -29,6 +29,10 @@ Distinguish client errors vs server errors.
 Catch both sync and async errors, and we don’t wanna to litter our controllers’ code with error handling. We want to throw an exception and make sure our dedicated middleware will handle it for us.
 Create a dedicated ErrorHandler class available for unit-testing.
 
+## Security
+
+To be implemented
+
 ## Installation
 
 ```bash
