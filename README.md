@@ -24,10 +24,10 @@ We have a utils folder to apply our middleware, we will create a function which 
 https://github.com/i0natan/nodebestpractices?source=post_page---------------------------#2-error-handling-practices
 
 What we have to think about:
-Catch uncaughtException and unhandledRejection.
-Distinguish client errors vs server errors.
-Catch both sync and async errors, and we don’t wanna to litter our controllers’ code with error handling. We want to throw an exception and make sure our dedicated middleware will handle it for us.
-Create a dedicated ErrorHandler class available for unit-testing.
+1 Catch uncaughtException and unhandledRejection.
+2 Distinguish client errors vs server errors.
+3 Catch both sync and async errors, and we don’t wanna to litter our controllers’ code with error handling. We want to throw an exception and make sure our dedicated middleware will handle it for us.
+4 Create a dedicated ErrorHandler class available for unit-testing.
 
 ## Security
 
