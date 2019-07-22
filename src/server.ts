@@ -10,6 +10,9 @@ import { applyMiddleware, applyRoutes } from './utils';
 
 import errorHandlers from './middleware/errorHandlers';
 
+// handlers for uncaughtException and uncaughtException events.
+// intended to be used only as a last resort
+// tslint:disable-next-line:max-line-length
 process.on('uncaughtException', (e: any) => {
   // tslint:disable-next-line:no-console
   console.log(e);
