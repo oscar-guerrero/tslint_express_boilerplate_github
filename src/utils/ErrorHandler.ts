@@ -1,8 +1,11 @@
+// dedicated object which encapsulates the whole logic HOW we manage
+// also better for testing
+
 import { NextFunction, Response } from 'express';
 import { HTTP404Error, HTTPClientError } from '../utils/httpErrors';
 
 export const notFoundError = () => {
-  throw new HTTP404Error('Route not found.');
+  throw new HTTP404Error({ message: 'route not found' });
 };
 
 export const clientError = (err: Error, res: Response, next: NextFunction) => {
