@@ -11,25 +11,35 @@ import { applyMiddleware, applyRoutes } from './utils';
 import errorHandlers from './middleware/errorHandlers';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // handlers for uncaughtException and uncaughtException events. Can be removed
 // In case of error kill this instance and spawn a new one. Tools like forever or pm2 can do it for us
 process.on('uncaughtException', (e: any) => {
   // tslint:disable-next-line:no-console
   // console.log(e);
 =======
+=======
+>>>>>>> with_error_handling
 // handlers for uncaughtException and uncaughtException events.
 // intended to be used only as a last resort
 // tslint:disable-next-line:max-line-length
 process.on('uncaughtException', (e: any) => {
   // tslint:disable-next-line:no-console
   console.log(e); // or send this to a log
+<<<<<<< HEAD
+>>>>>>> with_error_handling
+=======
 >>>>>>> with_error_handling
   process.exit(1);
 });
 process.on('unhandledRejection', (e: any) => {
   // tslint:disable-next-line:no-console
 <<<<<<< HEAD
+<<<<<<< HEAD
   // console.log(e);
+=======
+  console.log(e); // or send this to a log
+>>>>>>> with_error_handling
 =======
   console.log(e); // or send this to a log
 >>>>>>> with_error_handling

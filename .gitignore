@@ -2,8 +2,12 @@ node_modules/
 dist
 .env
 <<<<<<< HEAD
+<<<<<<< HEAD
 coverage
 
+=======
+coverage
+>>>>>>> with_error_handling
 =======
 coverage
 >>>>>>> with_error_handling

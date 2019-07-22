@@ -12,7 +12,7 @@ export const clientError = (err: Error, res: Response, next: NextFunction) => {
   // if error not in httpErrors then call 500
   if (err instanceof HTTPClientError) {
     // tslint:disable-next-line:no-console
-    // console.warn(err);
+    console.warn(err);
     res.status(err.statusCode).send(err.message);
   } else {
     next(err);
@@ -21,7 +21,7 @@ export const clientError = (err: Error, res: Response, next: NextFunction) => {
 
 export const serverError = (err: Error, res: Response, next: NextFunction) => {
   // tslint:disable-next-line:no-console
-  // console.error(err);
+  console.error(err);
   if (process.env.NODE_ENV === 'production') {
     res.status(500).send('Internal Server Error');
   } else {

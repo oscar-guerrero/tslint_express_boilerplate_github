@@ -24,6 +24,7 @@ We have a utils folder to apply our middleware, we will create a function which 
 https://github.com/i0natan/nodebestpractices?source=post_page---------------------------#2-error-handling-practices
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 What we have to think about:
 1 Catch uncaughtException and unhandledRejection.
 2 Distinguish client errors vs server errors.
@@ -34,6 +35,8 @@ What we have to think about:
 
 To be implemented
 =======
+=======
+>>>>>>> with_error_handling
 ### What we have to think about:
 
 Catch uncaughtException and unhandledRejection.Intended to be used only as a last resort
@@ -48,6 +51,9 @@ The 'unhandledRejection' event is emitted whenever a Promise is rejected and no 
 Distinguish client errors vs server errors.
 Catch both sync and async errors, as we don’t wanna to litter our controllers’ code with error handling. We want to throw an exception and make sure our dedicated middleware will handle it for us.
 Create a dedicated ErrorHandler class available for unit-testing.
+<<<<<<< HEAD
+>>>>>>> with_error_handling
+=======
 >>>>>>> with_error_handling
 
 ## Installation
