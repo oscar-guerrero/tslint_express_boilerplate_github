@@ -23,7 +23,7 @@ We have a utils folder to apply our middleware, we will create a function which 
 
 https://github.com/i0natan/nodebestpractices?source=post_page---------------------------#2-error-handling-practices
 
-# What we have to think about:
+### What we have to think about:
 
 Catch uncaughtException and unhandledRejection.Intended to be used only as a last resort
 
