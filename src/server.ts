@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import http from 'http';
 
@@ -9,19 +10,33 @@ import { applyMiddleware, applyRoutes } from './utils';
 
 import errorHandlers from './middleware/errorHandlers';
 
+<<<<<<< HEAD
 // handlers for uncaughtException and uncaughtException events. Can be removed
 // In case of error kill this instance and spawn a new one. Tools like forever or pm2 can do it for us
 process.on('uncaughtException', (e: any) => {
   // tslint:disable-next-line:no-console
   // console.log(e);
+=======
+// handlers for uncaughtException and uncaughtException events.
+// intended to be used only as a last resort
+// tslint:disable-next-line:max-line-length
+process.on('uncaughtException', (e: any) => {
+  // tslint:disable-next-line:no-console
+  console.log(e); // or send this to a log
+>>>>>>> with_error_handling
   process.exit(1);
 });
 process.on('unhandledRejection', (e: any) => {
   // tslint:disable-next-line:no-console
+<<<<<<< HEAD
   // console.log(e);
+=======
+  console.log(e); // or send this to a log
+>>>>>>> with_error_handling
   process.exit(1);
 });
 
+dotenv.config();
 const router = express();
 
 // as we’re adding more and more middleware we don’t have to change this code.

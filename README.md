@@ -23,6 +23,7 @@ We have a utils folder to apply our middleware, we will create a function which 
 
 https://github.com/i0natan/nodebestpractices?source=post_page---------------------------#2-error-handling-practices
 
+<<<<<<< HEAD
 What we have to think about:
 1 Catch uncaughtException and unhandledRejection.
 2 Distinguish client errors vs server errors.
@@ -32,6 +33,22 @@ What we have to think about:
 ## Security
 
 To be implemented
+=======
+### What we have to think about:
+
+Catch uncaughtException and unhandledRejection.Intended to be used only as a last resort
+
+https://nodejs.org/api/process.html?source=post_page---------------------------#process_warning_using_uncaughtexception_correctly
+
+Unhandled exceptions inherently mean that an application is in an undefined state. Attempting to resume application code without properly recovering from the exception can cause additional unforeseen and unpredictable issues.
+The correct use of 'uncaughtException' is to perform synchronous cleanup of allocated resources (e.g. file descriptors, handles, etc) before shutting down the process. It is not safe to resume normal operation after 'uncaughtException'.
+
+The 'unhandledRejection' event is emitted whenever a Promise is rejected and no error handler is attached to the promise within a turn of the event loop. When programming with Promises, exceptions are encapsulated as "rejected promises". Rejections can be caught and handled using promise.catch() and are propagated through a Promise chain. The 'unhandledRejection' event is useful for detecting and keeping track of promises that were rejected whose rejections have not yet been handled.
+
+Distinguish client errors vs server errors.
+Catch both sync and async errors, as we don’t wanna to litter our controllers’ code with error handling. We want to throw an exception and make sure our dedicated middleware will handle it for us.
+Create a dedicated ErrorHandler class available for unit-testing.
+>>>>>>> with_error_handling
 
 ## Installation
 
