@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import http from 'http';
 
@@ -23,6 +24,7 @@ process.on('unhandledRejection', (e: any) => {
   process.exit(1);
 });
 
+dotenv.config();
 const router = express();
 
 // as we’re adding more and more middleware we don’t have to change this code.
