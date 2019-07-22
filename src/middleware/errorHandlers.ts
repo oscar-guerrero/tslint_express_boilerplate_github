@@ -17,6 +17,8 @@ const handleClientError = (router: Router) => {
 };
 
 // handleServerErrors a place where we handle “Internal Server Error”.
+// our last resort for handling errors, we must handle it here,
+// or uncaughtException handler will be called, and this node process will be finished.
 const handleServerError = (router: Router) => {
   router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     ErrorHandler.serverError(err, res, next);
