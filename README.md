@@ -1,3 +1,5 @@
+## For this branch we will create a dummy request service to get some data
+
 ## Description
 
 we will follow Project Structure Practices from Node.js Best Practices at https://github.com/i0natan/nodebestpractices?source=post_page---------------------------#1-project-structure-practices
@@ -33,10 +35,12 @@ What we have to think about:
 
 ## Security
 
-To be implemented
+# To be implemented
+
 =======
-=======
->>>>>>> with_error_handling
+
+> > > > > > > with_error_handling
+
 ### What we have to think about:
 
 Catch uncaughtException and unhandledRejection.Intended to be used only as a last resort
@@ -52,9 +56,10 @@ Distinguish client errors vs server errors.
 Catch both sync and async errors, as we don’t wanna to litter our controllers’ code with error handling. We want to throw an exception and make sure our dedicated middleware will handle it for us.
 Create a dedicated ErrorHandler class available for unit-testing.
 <<<<<<< HEAD
->>>>>>> with_error_handling
-=======
->>>>>>> with_error_handling
+
+> > > > > > > # with_error_handling
+> > > > > > >
+> > > > > > > with_error_handling
 
 ## Installation
 
