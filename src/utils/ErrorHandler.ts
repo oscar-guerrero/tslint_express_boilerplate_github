@@ -8,14 +8,6 @@ export const notFoundError = () => {
   throw new HTTP404Error({ message: 'resource not found' });
 };
 
-export const movieMissingError = () => {
-  throw new HTTP404Error({ message: 'movie missing' });
-};
-
-export const movieRequestError = (message: string) => {
-  throw new HTTP404Error({ message });
-};
-
 export const clientError = (err: Error, res: Response, next: NextFunction) => {
   // if error not in httpErrors then call 500
   if (err instanceof HTTPClientError) {
