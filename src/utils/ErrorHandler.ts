@@ -5,7 +5,15 @@ import { NextFunction, Response } from 'express';
 import { HTTP404Error, HTTPClientError } from '../utils/httpErrors';
 
 export const notFoundError = () => {
-  throw new HTTP404Error({ message: 'route not found' });
+  throw new HTTP404Error({ message: 'resource not found' });
+};
+
+export const movieMissingError = () => {
+  throw new HTTP404Error({ message: 'movie missing' });
+};
+
+export const movieRequestError = (message: string) => {
+  throw new HTTP404Error({ message });
 };
 
 export const clientError = (err: Error, res: Response, next: NextFunction) => {

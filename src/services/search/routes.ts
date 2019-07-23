@@ -1,4 +1,6 @@
 import { Request, Response } from 'express';
+import { checkSearchParams } from '../../middleware/checks';
+import { getAllMovies, getSingleMovie } from './SearchController';
 
 export default [
   {
@@ -9,5 +11,26 @@ export default [
     },
     method: 'get',
     path: '/'
+  },
+  {
+    handler: [
+      async (req: Request, res: Response) => {
+        const result = await getAllMovies();
+        res.status(200).send(result);
+      }
+    ],
+    method: 'get',
+    path: '/api/v1/movies'
+  },
+  {
+    handler: [
+      checkSearchParams,
+      async ({ query }: Request, res: Response) => {
+        const result = await getSingleMovie(query.q);
+        res.status(200).send(result);
+      }
+    ],
+    method: 'get',
+    path: '/api/v1/movie'
   }
 ];
