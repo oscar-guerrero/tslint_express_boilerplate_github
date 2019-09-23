@@ -1,3 +1,7 @@
-import Routes from './routes';
+// import Routes from './routes';
 
-export default [...Routes];
+// export default [...Routes];
+
+import Hello from './hello';
+
+export default [...Hello];
