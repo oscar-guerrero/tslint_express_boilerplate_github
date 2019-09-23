@@ -5,7 +5,7 @@ import http from 'http';
 // as we’re adding more and more middleware we don’t have to change this code.
 // Only create its file under ./middleware and import it in ./middleware/index.ts.
 import middleware from './middleware';
-import routes from './services';
+import routes from './routes';
 import { applyMiddleware, applyRoutes } from './utils';
 
 import errorHandlers from './middleware/errorHandlers';
