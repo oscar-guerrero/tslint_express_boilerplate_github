@@ -2,7 +2,7 @@
 // also better for testing
 
 import { NextFunction, Response } from 'express';
-import { HTTPClientError, HTTPError } from '../utils/httpErrors';
+import { HTTPClientError, HTTPError } from './httpErrors';
 
 export const notFoundError = () => {
   throw new HTTPError(404, { message: 'route not found' });
