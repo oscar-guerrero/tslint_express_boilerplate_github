@@ -2,6 +2,7 @@
 
 // export default [...Routes];
 
+import Error from './error';
 import Hello from './hello';
 
-export default [...Hello];
+export default [...Hello, ...Error];
