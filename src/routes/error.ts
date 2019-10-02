@@ -4,9 +4,10 @@ import { HTTPError } from '../utils/httpErrors';
 export default [
   {
     handler: async (req: Request, res: Response) => {
-      //   res.send('Hello');
+      const fatalError = JSON.parse('{message: "hola"}');
+      res.send(fatalError);
       // force a 500 error here, comment the one above and uncomment the one below
-      throw new Error('works like shit');
+      //   throw new Error('works like shit');
       // tslint:disable-next-line:no-string-throw
       //   throw 'fucking shit';
     },
