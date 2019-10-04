@@ -334,3 +334,15 @@
   service: 'login-service',
   timestamp: '2019-10-04T12:08:00.047Z'
 }
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T12:11:53.414Z'
+}
+{
+  message: 'warning message',
+  level: 'warn',
+  service: 'login-service',
+  timestamp: '2019-10-04T12:12:00.626Z'
+}

@@ -19,11 +19,6 @@ export const handleCompression = (router: Router) => {
   router.use(compression());
 };
 
-morgan.format(
-  'myformat',
-  '[:date[clf]] ":method :url" :status :res[content-length] - :response-time ms'
-);
-
 export const handleMorgan = (router: Router) => {
   router.use(morgan('combined', { stream: accessLogStream }));
 };
