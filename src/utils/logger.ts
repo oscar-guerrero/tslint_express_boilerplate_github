@@ -1,15 +1,12 @@
-import { config, createLogger, format, transports } from 'winston';
+import * as winston from 'winston';
+import 'winston-daily-rotate-file';
 
-const { combine, timestamp, label, prettyPrint } = format;
+const { combine, timestamp, prettyPrint } = winston.format;
 
-export const logger = createLogger({
-  levels: config.syslog.levels,
+export const logger = winston.createLogger({
+  level: 'info',
   // tslint:disable-next-line:object-literal-sort-keys
-  format: combine(
-    label({ label: 'in the login service' }),
-    timestamp(),
-    prettyPrint()
-  ),
+  format: combine(timestamp(), prettyPrint()),
   // tslint:disable-next-line:object-literal-sort-keys
   defaultMeta: { service: 'login-service' },
   transports: [
@@ -17,17 +14,19 @@ export const logger = createLogger({
     // - Write to all logs with level `info` and below to `combined.log`
     // - Write all logs error (and below) to `error.log`.
     //
-    new transports.File({ filename: 'error.log', level: 'error' }),
-    new transports.File({ filename: 'warn.log', level: 'warning' }),
-    new transports.File({ filename: 'info.log', level: 'info' })
+    new winston.transports.File({ filename: 'info.log', level: 'info' }),
+    new winston.transports.File({ filename: 'warn.log', level: 'warn' }),
+    new winston.transports.File({ filename: 'error.log', level: 'error' })
   ],
-  exceptionHandlers: [new transports.File({ filename: 'exceptions.log' })]
+  exceptionHandlers: [
+    new winston.transports.File({ filename: 'exceptions.log' })
+  ]
 });
 
 if (process.env.NODE_ENV !== 'production') {
   logger.add(
-    new transports.Console({
-      format: format.simple()
+    new winston.transports.Console({
+      format: winston.format.simple()
     })
   );
 }

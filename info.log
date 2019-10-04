@@ -1,56 +1,96 @@
 {
-  message: 'Server is running http://localhost:3000...',
-  level: 'info',
-  service: 'login-service',
-  label: 'in the login service',
-  timestamp: '2019-10-04T08:48:05.171Z'
-}
-{
-  message: 'Hello from the hello route',
-  level: 'info',
-  service: 'login-service',
-  label: 'in the login service',
-  timestamp: '2019-10-04T08:48:15.714Z'
-}
-{
   message: 'warning message',
-  level: 'warning',
+  level: 'warn',
   service: 'login-service',
-  label: 'in the login service',
-  timestamp: '2019-10-04T08:48:46.114Z'
+  timestamp: '2019-10-04T11:11:46.056Z'
 }
 {
-  message: 'Unexpected token m in JSON at position 1',
+  message: 'getaddrinfo ENOTFOUND jsonplaceholderx.typicode.com',
   level: 'error',
   service: 'login-service',
-  label: 'in the login service',
-  timestamp: '2019-10-04T08:49:21.644Z'
+  timestamp: '2019-10-04T11:11:54.715Z'
 }
 {
   message: 'Server is running http://localhost:3000...',
   level: 'info',
   service: 'login-service',
-  label: 'in the login service',
-  timestamp: '2019-10-04T08:51:12.476Z'
+  timestamp: '2019-10-04T11:12:16.660Z'
+}
+{
+  message: 'getaddrinfo ENOTFOUND jsonplaceholderx.typicode.com',
+  level: 'error',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:12:20.278Z'
 }
 {
   message: 'Server is running http://localhost:3000...',
   level: 'info',
   service: 'login-service',
-  label: 'in the login service',
-  timestamp: '2019-10-04T08:51:27.039Z'
+  timestamp: '2019-10-04T11:16:01.850Z'
 }
 {
-  service: 'login-service',
+  message: 'Server is running http://localhost:3000...',
   level: 'info',
-  message: 'route not found',
-  label: 'in the login service',
-  timestamp: '2019-10-04T08:51:29.641Z'
+  service: 'login-service',
+  timestamp: '2019-10-04T11:18:04.703Z'
 }
 {
-  service: 'login-service',
+  message: 'Server is running http://localhost:3000...',
   level: 'info',
-  message: 'route not found',
-  label: 'in the login service',
-  timestamp: '2019-10-04T08:51:46.515Z'
+  service: 'login-service',
+  timestamp: '2019-10-04T11:19:03.106Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:21:01.580Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:22:18.689Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:22:18.944Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:22:56.405Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:24:45.346Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:27:07.004Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:27:21.101Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:27:54.876Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  timestamp: '2019-10-04T11:28:57.834Z'
 }

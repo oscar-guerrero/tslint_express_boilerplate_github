@@ -17,7 +17,7 @@ const handleClientError = (router: Router) => {
     // if error not in httpErrors then call 500
     if (err instanceof HTTPClientError) {
       // tslint:disable-next-line:no-console
-      console.warn(err);
+      logger.warn(err.message);
       res.status(err.statusCode).send(err.message);
     } else {
       next(err);
@@ -31,7 +31,7 @@ const handleClientError = (router: Router) => {
 const handleServerError = (router: Router) => {
   router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     // tslint:disable-next-line:no-console
-    console.error(err);
+    logger.error(err.message);
     if (process.env.NODE_ENV === 'production') {
       res.status(500).send('Internal Server Error');
     } else {

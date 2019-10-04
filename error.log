@@ -1,7 +1,6 @@
 {
-  message: 'Unexpected token m in JSON at position 1',
+  message: 'getaddrinfo ENOTFOUND jsonplaceholderx.typicode.com',
   level: 'error',
   service: 'login-service',
-  label: 'in the login service',
-  timestamp: '2019-10-04T08:49:21.644Z'
+  timestamp: '2019-10-04T11:12:20.278Z'
 }

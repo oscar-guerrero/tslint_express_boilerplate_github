@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { HTTPError } from '../utils/httpErrors';
-import { logger } from '../utils/logger';
 
 export default [
   {
@@ -12,7 +11,6 @@ export default [
       try {
         const fatalError = JSON.parse('{message: "hola"}');
       } catch (error) {
-        logger.error(error.message);
         throw new Error('error parsing JSON in error.ts');
       }
 
@@ -25,7 +23,6 @@ export default [
     handler: async (req: Request, res: Response) => {
       //   res.send('Hello');
       // force a 500 error here, comment the one above and uncomment the one below
-      logger.warning('warning message');
       throw new HTTPError(401, 'warning message');
     },
     method: 'get',

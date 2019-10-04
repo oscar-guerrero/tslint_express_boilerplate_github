@@ -19,7 +19,7 @@ process.on('uncaughtException', (e: any) => {
   // console.log(e);
   // tslint:disable-next-line:no-console
   console.log('uncaughtException');
-  logger.error(e.message);
+  logger.error('Oh shit uncaughtException');
   process.exit(1);
 });
 process.on('unhandledRejection', (e: any) => {
