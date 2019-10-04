@@ -25,10 +25,9 @@ morgan.format(
 );
 
 export const handleMorgan = (router: Router) => {
-  router.use(morgan('common', { stream: accessLogStream }));
+  router.use(morgan('combined', { stream: accessLogStream }));
 };
 
-const accessLogStream = fs.createWriteStream(
-  path.join('../../', 'access.log'),
-  { flags: 'a' }
-);
+const accessLogStream = fs.createWriteStream(path.join('./', 'access.log'), {
+  flags: 'a'
+});
