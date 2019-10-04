@@ -2,6 +2,9 @@ import parser from 'body-parser';
 import compression from 'compression';
 import cors from 'cors';
 import { Router } from 'express';
+import fs from 'fs';
+import morgan from 'morgan';
+import path from 'path';
 
 // All our middleware wrappers accept express router class.
 export const handleCors = (router: Router) =>
@@ -15,3 +18,17 @@ export const handleBodyRequestParsing = (router: Router) => {
 export const handleCompression = (router: Router) => {
   router.use(compression());
 };
+
+morgan.format(
+  'myformat',
+  '[:date[clf]] ":method :url" :status :res[content-length] - :response-time ms'
+);
+
+export const handleMorgan = (router: Router) => {
+  router.use(morgan('common', { stream: accessLogStream }));
+};
+
+const accessLogStream = fs.createWriteStream(
+  path.join('../../', 'access.log'),
+  { flags: 'a' }
+);

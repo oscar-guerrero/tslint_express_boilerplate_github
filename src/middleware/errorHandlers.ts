@@ -1,10 +1,12 @@
 import { NextFunction, Request, Response, Router } from 'express';
 import { HTTPClientError, HTTPError } from '../utils/httpErrors';
+import { logger } from '../utils/logger';
 
 // handle404Error the way you handle 404 in express. By adding a fallback middleware if nothing else was found.
 
 const handle404Error = (router: Router) => {
   router.use((req: Request, res: Response) => {
+    logger.info('route not found', req.url);
     throw new HTTPError(404, { message: 'route not found' });
   });
 };

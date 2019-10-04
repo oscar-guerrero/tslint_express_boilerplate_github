@@ -1,15 +1,22 @@
 import { Request, Response } from 'express';
 import { HTTPError } from '../utils/httpErrors';
+import { logger } from '../utils/logger';
 
 export default [
   {
     handler: async (req: Request, res: Response) => {
-      const fatalError = JSON.parse('{message: "hola"}');
-      res.send(fatalError);
       // force a 500 error here, comment the one above and uncomment the one below
       //   throw new Error('works like shit');
       // tslint:disable-next-line:no-string-throw
-      //   throw 'fucking shit';
+      // throw 'fucking shit';
+      try {
+        const fatalError = JSON.parse('{message: "hola"}');
+      } catch (error) {
+        logger.error(error.message);
+        throw new Error('error parsing JSON in error.ts');
+      }
+
+      res.send('I am not supposed to be shown');
     },
     method: 'get',
     path: '/error500'
@@ -18,9 +25,10 @@ export default [
     handler: async (req: Request, res: Response) => {
       //   res.send('Hello');
       // force a 500 error here, comment the one above and uncomment the one below
-      throw new HTTPError(403, 'works like shit');
+      logger.warning('warning message');
+      throw new HTTPError(401, 'warning message');
     },
     method: 'get',
-    path: '/error403'
+    path: '/error401'
   }
 ];

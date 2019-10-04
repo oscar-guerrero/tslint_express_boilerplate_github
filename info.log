@@ -1,0 +1,56 @@
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:48:05.171Z'
+}
+{
+  message: 'Hello from the hello route',
+  level: 'info',
+  service: 'login-service',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:48:15.714Z'
+}
+{
+  message: 'warning message',
+  level: 'warning',
+  service: 'login-service',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:48:46.114Z'
+}
+{
+  message: 'Unexpected token m in JSON at position 1',
+  level: 'error',
+  service: 'login-service',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:49:21.644Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:51:12.476Z'
+}
+{
+  message: 'Server is running http://localhost:3000...',
+  level: 'info',
+  service: 'login-service',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:51:27.039Z'
+}
+{
+  service: 'login-service',
+  level: 'info',
+  message: 'route not found',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:51:29.641Z'
+}
+{
+  service: 'login-service',
+  level: 'info',
+  message: 'route not found',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:51:46.515Z'
+}

@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import http from 'http';
+import { logger } from './utils/logger';
 
 // as we’re adding more and more middleware we don’t have to change this code.
 // Only create its file under ./middleware and import it in ./middleware/index.ts.
@@ -15,17 +16,18 @@ import errorHandlers from './middleware/errorHandlers';
 // tslint:disable-next-line:max-line-length
 process.on('uncaughtException', (e: any) => {
   // tslint:disable-next-line:no-console
-  console.log(e);
+  // console.log(e);
   // tslint:disable-next-line:no-console
   console.log('uncaughtException');
-
+  logger.error(e.message);
   process.exit(1);
 });
 process.on('unhandledRejection', (e: any) => {
   // tslint:disable-next-line:no-console
-  console.log(e);
+  // console.log(e);
   // tslint:disable-next-line:no-console
   console.log('unhandledRejection');
+  logger.error('Oh shit unhandledRejection');
 
   process.exit(1);
 });
@@ -48,5 +50,5 @@ const server = http.createServer(router);
 
 server.listen(PORT, () =>
   // tslint:disable-next-line:no-console
-  console.log(`Server is running http://localhost:${PORT}...`)
+  logger.info(`Server is running http://localhost:${PORT}...`)
 );

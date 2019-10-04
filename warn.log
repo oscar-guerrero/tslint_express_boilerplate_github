@@ -1,0 +1,14 @@
+{
+  message: 'warning message',
+  level: 'warning',
+  service: 'login-service',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:48:46.114Z'
+}
+{
+  message: 'Unexpected token m in JSON at position 1',
+  level: 'error',
+  service: 'login-service',
+  label: 'in the login service',
+  timestamp: '2019-10-04T08:49:21.644Z'
+}
