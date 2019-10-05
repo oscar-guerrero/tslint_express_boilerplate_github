@@ -17,7 +17,8 @@
         },
         "esSpecCompliant": true
       }
-    ]
+    ],
+    "typedef": [true, "call-signature"]
   },
   "rulesDirectory": []
 }

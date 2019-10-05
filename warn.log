@@ -70,3 +70,21 @@
   service: 'login-service',
   timestamp: '2019-10-04T12:12:00.626Z'
 }
+{
+  message: 'error parsing JSON in error.ts',
+  level: 'error',
+  service: 'login-service',
+  timestamp: '2019-10-05T10:21:03.340Z'
+}
+{
+  message: 'error parsing JSON in error.ts',
+  level: 'error',
+  service: 'login-service',
+  timestamp: '2019-10-05T10:21:08.464Z'
+}
+{
+  message: 'warning message',
+  level: 'warn',
+  service: 'login-service',
+  timestamp: '2019-10-05T10:28:57.835Z'
+}
