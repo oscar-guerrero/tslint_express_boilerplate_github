@@ -33,7 +33,7 @@ const handleServerError = (router: Router) => {
     if (process.env.NODE_ENV === 'production') {
       res.status(500).send('Internal Server Error');
     } else {
-      res.status(500).send(err.stack);
+      res.status(500).json({ error: err });
     }
   });
 };
