@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { HTTPError } from '../utils/httpErrors';
+import { logger } from '../utils/logger';
 
 export default [
   {
@@ -11,7 +12,8 @@ export default [
       try {
         const fatalError = JSON.parse('{message: "hola"}');
       } catch (error) {
-        throw new Error('error parsing JSON in error.ts');
+        // tslint:disable-next-line:no-string-throw
+        throw error;
       }
 
       res.send('I am not supposed to be shown');
@@ -23,6 +25,11 @@ export default [
     handler: async (req: Request, res: Response) => {
       //   res.send('Hello');
       // force a 500 error here, comment the one above and uncomment the one below
+      logger.warn({
+        message: 'hola',
+        // tslint:disable-next-line:object-literal-sort-keys
+        data: { description: 'description', more: 'More info' }
+      });
       throw new HTTPError(401, 'warning message');
     },
     method: 'get',

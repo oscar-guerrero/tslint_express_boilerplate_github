@@ -16,8 +16,6 @@ const handleClientError = (router: Router) => {
   router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     // if error not in httpErrors then call 500
     if (err instanceof HTTPClientError) {
-      // tslint:disable-next-line:no-console
-      logger.warn(err.message);
       res.status(err.statusCode).send(err.message);
     } else {
       next(err);
@@ -30,12 +28,11 @@ const handleClientError = (router: Router) => {
 // or uncaughtException handler will be called, and this node process will be finished.
 const handleServerError = (router: Router) => {
   router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    // tslint:disable-next-line:no-console
-    logger.error(err.message);
+    logger.error({ message: err.message, data: err });
     if (process.env.NODE_ENV === 'production') {
       res.status(500).send('Internal Server Error');
     } else {
-      res.status(500).send(err.stack);
+      res.status(500).send(err.message);
     }
   });
 };

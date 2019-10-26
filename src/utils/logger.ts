@@ -8,7 +8,7 @@ export const logger = winston.createLogger({
   // tslint:disable-next-line:object-literal-sort-keys
   format: combine(timestamp(), prettyPrint()),
   // tslint:disable-next-line:object-literal-sort-keys
-  defaultMeta: { service: 'login-service' },
+  defaultMeta: { service: 'boiler-plate' },
   transports: [
     //
     // - Write to all logs with level `info` and below to `combined.log`

@@ -17,16 +17,12 @@ import errorHandlers from './middleware/errorHandlers';
 process.on('uncaughtException', (e: any) => {
   // tslint:disable-next-line:no-console
   // console.log(e);
-  // tslint:disable-next-line:no-console
-  console.log('uncaughtException');
   logger.error('Oh shit uncaughtException');
   process.exit(1);
 });
 process.on('unhandledRejection', (e: any) => {
   // tslint:disable-next-line:no-console
   // console.log(e);
-  // tslint:disable-next-line:no-console
-  console.log('unhandledRejection');
   logger.error('Oh shit unhandledRejection');
 
   process.exit(1);
