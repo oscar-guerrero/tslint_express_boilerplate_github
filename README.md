@@ -29,6 +29,10 @@ What we have to think about:
 3 Catch both sync and async errors, and we don’t wanna to litter our controllers’ code with error handling. We want to throw an exception and make sure our dedicated middleware will handle it for us.
 4 Create a dedicated ErrorHandler class available for unit-testing.
 
+```
+Check the Winston branch to see how it logs
+```
+
 ## Security
 
 To be implemented
