@@ -1,10 +1,10 @@
-import parser from 'body-parser';
-import compression from 'compression';
-import cors from 'cors';
-import { Router } from 'express';
-import fs from 'fs';
-import morgan from 'morgan';
-import path from 'path';
+import parser from "body-parser";
+import compression from "compression";
+import cors from "cors";
+import { Router } from "express";
+import fs from "fs";
+import morgan from "morgan";
+import path from "path";
 
 // All our middleware wrappers accept express router class.
 export const handleCors = (router: Router) =>
@@ -20,9 +20,9 @@ export const handleCompression = (router: Router) => {
 };
 
 export const handleMorgan = (router: Router) => {
-  router.use(morgan('combined', { stream: accessLogStream }));
+  router.use(morgan("combined", { stream: accessLogStream }));
 };
 
-const accessLogStream = fs.createWriteStream(path.join('./', 'access.log'), {
-  flags: 'a'
+const accessLogStream = fs.createWriteStream(path.join("./", "access.log"), {
+  flags: "a",
 });

@@ -17,7 +17,7 @@ export abstract class HTTPClientError extends Error {
 export class HTTPError extends HTTPClientError {
   constructor(
     public readonly statusCode: number,
-    message: string | object = 'Bad Request'
+    message: string | object = "Bad Request",
   ) {
     super(statusCode, message);
   }

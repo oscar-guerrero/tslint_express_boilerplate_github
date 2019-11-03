@@ -2,7 +2,7 @@
 // The applyMiddleware helper accepts the list of middleware wrappers we define in
 // ./middleware/index.ts and express.Router.
 
-import { NextFunction, Request, Response, Router } from 'express';
+import { NextFunction, Request, Response, Router } from "express";
 
 type Wrapper = (router: Router) => void;
 
@@ -11,7 +11,7 @@ type Wrapper = (router: Router) => void;
 // we define in ./middleware/index.ts and express.Router.
 export const applyMiddleware = (
   middlewareWrappers: Wrapper[],
-  router: Router
+  router: Router,
 ) => {
   for (const wrapper of middlewareWrappers) {
     wrapper(router);
@@ -21,7 +21,7 @@ export const applyMiddleware = (
 type Handler = (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => Promise<void> | void;
 
 interface Route {

@@ -1,31 +1,30 @@
-import dotenv from 'dotenv';
-import express from 'express';
-import http from 'http';
-import { logger } from './utils/logger';
+import dotenv from "dotenv";
+import express from "express";
+import http from "http";
+import { logger } from "./utils/logger";
 
 // as we’re adding more and more middleware we don’t have to change this code.
 // Only create its file under ./middleware and import it in ./middleware/index.ts.
-import middleware from './middleware';
-import routes from './routes';
-import { applyMiddleware, applyRoutes } from './utils';
+import middleware from "./middleware";
+import routes from "./routes";
+import { applyMiddleware, applyRoutes } from "./utils";
 
-import errorHandlers from './middleware/errorHandlers';
+import errorHandlers from "./middleware/errorHandlers";
 
 // handlers for uncaughtException and uncaughtException events.
 // intended to be used only as a last resort
 // tslint:disable-next-line:max-line-length
-process.on('uncaughtException', (e: any) => {
+process.on("uncaughtException", (e: any) => {
   // tslint:disable-next-line:no-console
   // console.log(e);
-  logger.error('Oh shit uncaughtException');
-  process.exit(1);
+  logger.error("uncaughtException", { data: e });
+  logger.on("finish", () => process.exit(1));
+  logger.end();
 });
-process.on('unhandledRejection', (e: any) => {
-  // tslint:disable-next-line:no-console
-  // console.log(e);
-  logger.error('Oh shit unhandledRejection');
-
-  process.exit(1);
+process.on("unhandledRejection", (e: any) => {
+  logger.error("unhandledRejection", { data: e });
+  logger.on("finish", () => process.exit(1));
+  logger.end();
 });
 
 dotenv.config();
@@ -46,5 +45,5 @@ const server = http.createServer(router);
 
 server.listen(PORT, () =>
   // tslint:disable-next-line:no-console
-  logger.info(`Server is running http://localhost:${PORT}...`)
+  logger.info(`Server is running http://localhost:${PORT}...`),
 );
